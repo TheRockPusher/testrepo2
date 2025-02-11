@@ -29,7 +29,7 @@ build: clean-build ## Build wheel file
 .PHONY: docker-build ## Build docker image
 docker-build: build
 	@echo "🚀 Creating docker image with version $(PACKAGE_VERSION)"
-	@docker build --no-cache -t testrepo:$(PACKAGE_VERSION) .
+	@docker build --no-cache -t user/testrepo:$(PACKAGE_VERSION) .
 
 .PHONY: clean-build
 clean-build: ## Clean build artifacts
