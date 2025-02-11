@@ -1,6 +1,6 @@
 [project]
 name = "testrepo2"
-version = "0.1.0"
+version = "0.2.0"
 description = "Add your description here"
 #authors = [{ name = "", email = "" }]
 readme = "README.md"
