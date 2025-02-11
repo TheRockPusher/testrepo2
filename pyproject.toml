@@ -1,6 +1,6 @@
 [project]
 name = "testrepo2"
-version = "0.4.0"
+version = "0.8.0"
 description = "Add your description here"
 #authors = [{ name = "", email = "" }]
 readme = "README.md"
@@ -32,6 +32,7 @@ build-backend = "setuptools.build_meta"
 py-modules = ["testrepo2"]
 
 [tool.bumpversion]
+current_version = "0.8.0"
 commit = true
 message = "Bump Version v{current_version} -> v{new_version}"
 tag = true
@@ -40,8 +41,9 @@ pre_commit_hooks = ["uv sync", "git add uv.lock"]
 
 [[tool.bumpversion.files]]
 filename = "pyproject.toml"
-search = "version = {current_version}"
-replace = "version = {new_version}"
+regex = true
+search = "^version = \"{current_version}\""
+replace = "version = \"{new_version}\""
 
 [tool.ruff]
 line-length = 120
