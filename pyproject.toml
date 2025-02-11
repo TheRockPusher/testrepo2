@@ -1,0 +1,65 @@
+[project]
+name = "testrepo2"
+version = "0.1.0"
+description = "Add your description here"
+#authors = [{ name = "", email = "" }]
+readme = "README.md"
+keywords = ["python"]
+requires-python = ">=3.9"
+# classifiers = [
+#     "Intended Audience :: Developers",
+#     "Programming Language :: Python",
+#     "Programming Language :: Python :: 3",
+#     "Programming Language :: Python :: 3.9",
+#     "Programming Language :: Python :: 3.10",
+#     "Programming Language :: Python :: 3.11",
+#     "Programming Language :: Python :: 3.12",
+#     "Programming Language :: Python :: 3.13",
+#     "Topic :: Software Development :: Libraries :: Python Modules",
+# ]
+dependencies = []
+
+[project.urls]
+Homepage = "https://TheRockPusher.github.io/testrepo2/"
+Repository = "https://github.com/TheRockPusher/testrepo2"
+Documentation = "https://TheRockPusher.github.io/testrepo2/"
+
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["testrepo2"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+fix = true
+lint.select = ["ALL"]
+lint.ignore = []
+
+[tool.ruff.lint.per-file-ignores]
+"**/tests/*" = [
+    "S101", # asserts allowed in tests...
+]
+"**/__init__.py" = [
+    "D104"
+]
+
+# [tool.pyright]
+# typeCheckingMode = "standard"
+# include = ["testrepo2"]
+# pythonVersion = "3.12"
+# reportMissingImports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra -s -v --durations=0 --cov=testrepo2 --cov-fail-under=80"
+
+[dependency-groups]
+dev = [
+    "pyright>=1.1.393",
+    "pytest>=8.3.4",
+    "pytest-cov>=6.0.0",
+    "ruff>=0.9.6",
+]
