@@ -1,4 +1,4 @@
-name: Bump version
+name: Release
 
 on:
   workflow_dispatch:
@@ -14,7 +14,7 @@ on:
         - patch
 
 jobs:
-  set-up:
+  bump-version:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the code
@@ -26,11 +26,6 @@ jobs:
       - name: Install uv
         uses: astral-sh/setup-uv@v5
 
-  
-  bump-version:
-    runs-on: ubuntu-latest
-    needs: [set-up]
-    steps:
       - name: Bump version
         id: bump
         uses: callowayproject/bump-my-version@master
