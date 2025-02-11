@@ -18,4 +18,4 @@ ADD . /app
 # Sync the project
 RUN uv sync --frozen
 
-CMD [ "python", "testrepo2/foo.py"]
+CMD [ "python", "testrepo2/hello.py"]

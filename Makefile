@@ -1,3 +1,5 @@
+PACKAGE_VERSION := $(shell grep -m1 '^version' pyproject.toml | sed -E 's/version *= *"(.*)"/\1/')
+
 .PHONY: install
 install: ## Install the virtual environment
 	@echo "🚀 Creating virtual environment using uv"
@@ -23,6 +25,11 @@ test: ## Test the code with pytest
 build: clean-build ## Build wheel file
 	@echo "🚀 Creating wheel file"
 	@uvx --from build pyproject-build --installer uv
+
+.PHONY: docker-build ## Build docker image
+docker-build: build
+	@echo "🚀 Creating docker image with version $(PACKAGE_VERSION)"
+	@docker build --no-cache -t testrepo:$(PACKAGE_VERSION) .
 
 .PHONY: clean-build
 clean-build: ## Clean build artifacts
