@@ -61,6 +61,7 @@ addopts = "-ra -s -v --durations=0 --cov=testrepo2 --cov-fail-under=50"
 
 [dependency-groups]
 dev = [
+    "bump-my-version>=0.32.1",
     "pyright>=1.1.393",
     "pytest>=8.3.4",
     "pytest-cov>=6.0.0",
