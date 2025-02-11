@@ -75,8 +75,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.release.outputs.upload_url }}
-          asset_path: ./dist/uta_content_aggregation-${{ needs.bump-version.outputs.current-version }}-py3-none-any.whl
-          asset_name: uta_content_aggregation-${{ needs.bump-version.outputs.current-version }}-py3-none-any.whl
+          asset_path: ./dist/testrepo2-${{ needs.bump-version.outputs.current-version }}-py3-none-any.whl
+          asset_name: testrepo2-${{ needs.bump-version.outputs.current-version }}-py3-none-any.whl
           asset_content_type: application/octet-stream
 
       - name: Upload tarball asset
@@ -85,8 +85,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.release.outputs.upload_url }}
-          asset_path: ./dist/uta_content_aggregation-${{ needs.bump-version.outputs.current-version }}.tar.gz
-          asset_name: uta_content_aggregation-${{ needs.bump-version.outputs.current-version }}.tar.gz
+          asset_path: ./dist/testrepo2-${{ needs.bump-version.outputs.current-version }}.tar.gz
+          asset_name: testrepo2-${{ needs.bump-version.outputs.current-version }}.tar.gz
           asset_content_type: application/gzip
 
       - name: Login to github reg
