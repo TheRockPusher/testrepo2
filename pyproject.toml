@@ -40,6 +40,8 @@ pre_commit_hooks = ["uv sync", "git add uv.lock"]
 
 [[tool.bumpversion.files]]
 filename = "pyproject.toml"
+search = "version = {current_version}"
+replace = "version = {new_version}"
 
 [tool.ruff]
 line-length = 120
