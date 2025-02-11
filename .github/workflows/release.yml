@@ -28,6 +28,12 @@ jobs:
       - name: Install uv
         uses: astral-sh/setup-uv@v5
 
+      - name: Run checks
+        run: make check
+      
+      - name: Run Tests
+        run: make test
+
       - name: Bump version
         id: bump
         uses: callowayproject/bump-my-version@master
