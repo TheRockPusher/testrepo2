@@ -10,7 +10,7 @@ check: ## Run code quality tools.
 	@echo "🚀 Checking lock file consistency with 'pyproject.toml'"
 	@uv lock --locked
 	@echo "🚀 Formatting code: Running ruff format"
-	@uv run ruff format
+	@uv run ruff format --check
 	@echo "🚀 Linting code: Running ruff check"
 	@uv run ruff check
 	@echo "🚀 Static type checking: Running pyright"

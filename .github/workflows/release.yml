@@ -67,7 +67,7 @@ jobs:
         uses: ./.github/actions/setup
       
       - name: Build distributions
-        run: uv build
+        run: make build
 
       - name: Upload wheel asset
         uses: actions/upload-release-asset@v1
