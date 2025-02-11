@@ -1,6 +1,6 @@
 [project]
 name = "testrepo2"
-version = "0.16.0"
+version = "0.16.1"
 description = "Add your description here"
 #authors = [{ name = "", email = "" }]
 readme = "README.md"
@@ -32,7 +32,7 @@ build-backend = "setuptools.build_meta"
 py-modules = ["testrepo2"]
 
 [tool.bumpversion]
-current_version = "0.16.0"
+current_version = "0.16.1"
 commit = true
 message = "Bump Version v{current_version} -> v{new_version}"
 tag = true
