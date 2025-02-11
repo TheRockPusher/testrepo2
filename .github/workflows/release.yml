@@ -103,4 +103,4 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: user/testrepo:${{ needs.bump-version.outputs.current-version }}
+          tags: ghcr.io/user/testrepo:${{ needs.bump-version.outputs.current-version }}
