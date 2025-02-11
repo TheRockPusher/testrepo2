@@ -35,6 +35,8 @@ py-modules = ["testrepo2"]
 commit = true
 message = "Bump Version v{current_version} -> v{new_version}"
 tag = true
+tag_name = "v{new_version}"
+pre_commit_hooks = ["uv sync", "git add uv.lock"]
 
 [[tool.bumpversion.files]]
 filename = "pyproject.toml"
