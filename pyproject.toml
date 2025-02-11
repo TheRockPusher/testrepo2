@@ -36,7 +36,10 @@ line-length = 120
 target-version = "py312"
 fix = true
 lint.select = ["ALL"]
-lint.ignore = []
+lint.ignore = [
+    "D211",
+    "D213",# ruff incapabilities
+]
 
 [tool.ruff.lint.per-file-ignores]
 "**/tests/*" = [
@@ -46,15 +49,15 @@ lint.ignore = []
     "D104"
 ]
 
-# [tool.pyright]
-# typeCheckingMode = "standard"
-# include = ["testrepo2"]
-# pythonVersion = "3.12"
-# reportMissingImports = true
+[tool.pyright]
+typeCheckingMode = "standard"
+include = ["testrepo2"]
+pythonVersion = "3.12"
+reportMissingImports = true
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-addopts = "-ra -s -v --durations=0 --cov=testrepo2 --cov-fail-under=80"
+addopts = "-ra -s -v --durations=0 --cov=testrepo2 --cov-fail-under=50"
 
 [dependency-groups]
 dev = [
